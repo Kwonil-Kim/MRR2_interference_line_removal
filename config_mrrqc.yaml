@@ -1,0 +1,89 @@
+################################################################################
+# YAML configuration file to run the MRR-2 interference line removal algorithm #
+################################################################################
+
+# Config for script
+main:
+    # Whether to apply fuzzy QC
+    fuzzy: True # Typical: True
+    
+    # Whether to apply despeckle
+    despeckle: True # Typical: True
+    
+    # Whether to save the result
+    output: True # Typical: True / False to perform a dry run
+    
+    # Whether to log the status
+    logging: True # Typical: True
+
+# Config for fuzzy QC
+fuzzy:
+    # Threshold for aggregated MF value
+    # Lower value leads to stronger QC
+    thr_A: 0.5 # Typical: 0.5
+    
+    # Parameters for membership function (Sigmoid)
+    parameter:
+        # Reflectivity, Generalized bell shape
+        Ze: [0.145, 8.732] # Typical: [0.145, 8.732]
+        # Fall velocity
+        Vr: [-0.700, 6.083] # Typical: [-0.700, 6.083]
+        # Left peak boundary
+        PL: [-1.444, 4.646] # Typical: [-1.444, 4.646]
+        # Peak width
+        PW: [1.042, 2.148] # Typical: [1.042, 2.148]
+        # Peak slope
+        PS: [-0.277, 10.648] # Typical: [-0.277, 10.648]
+        # Peak slope (smoothed)
+        PSs: [-0.297, 9.421] # Typical: [-0.297, 9.421]
+        # Continuity in space
+        CS: [10.701, 0.736] # Typical: [10.701, 0.736]
+        # Continuity in space (smoothed)
+        CSs: [9.073, 0.648] # Typical: [9.073, 0.648]
+    
+    # Weight for each membership function
+    weight:
+        Ze: 0.518 # Typical: 0.518
+        Vr: 0.475 # Typical: 0.475
+        PL: 0.835 # Typical: 0.835
+        PW: 0.679 # Typical: 0.679
+        PS: 0.699 # Typical: 0.699
+        PSs: 0.614 # Typical: 0.614
+        CS: 0.784 # Typical: 0.784
+        CSs: 0.731 # Typical: 0.731
+    
+    # Minimum height index where the QC is applied
+    min_hgt_idx: 22 # Typical: 22
+
+# Config for despeckling
+despeckle:
+    window_size: [3,3] # Typical: [3,3]
+    thr_cnt: 1 # Typical: 1
+
+# Config for membership variables
+mv:
+    PSs:
+        window_size: [11,1] # Typical: [11,1]
+    CS:
+        window_size: [1,5] # Typical: [1,5]
+    CSs:
+        window_size: [11,1] # Typical: [11,1]
+
+# Config for logging
+logging:
+    version: 1 # DO NOT MODIFY
+    formatters:
+      default:
+        format: '[%(asctime)s][%(levelname)7s][%(funcName)s()] %(message)s' # DO NOT MODIFY
+    handlers:
+      console:
+        class: logging.StreamHandler # DO NOT MODIFY
+        level: DEBUG # DO NOT MODIFY
+        formatter: default # DO NOT MODIFY
+        stream: ext://sys.stdout # DO NOT MODIFY
+    loggers:
+      mrrqc:
+        level: INFO # Recommend: INFO / Possible: DEBUG
+        handlers: [console] # DO NOT MODIFY
+        propagate: no # DO NOT MODIFY
+
