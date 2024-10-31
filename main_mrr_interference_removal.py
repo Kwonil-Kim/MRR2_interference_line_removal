@@ -18,14 +18,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>
 
-Syntax:  python <script>.py <config>.yaml <input_filename> <output_directory>
-
-Example: python config_mrrqc.yaml mrrqc.py /foo/bar/0531.nc /path/to/save/output/without_yearmonth/
-
-Important Notes:
- - Input file must be post-processed by Maahn and Kollias (2012) algorithm (i.e. IMProToo).
- - This altorithm assumed the rain event. Therefore, the algorithm does not process de-aliased fields, which often gives unreliable value for rain. The users should read '~~_noDA' fields.
-
 Version history:
 1.0 / Jun 2022 (kwonil): Created
 1.1 / Aug 2024 (kwonil): Add a capability to update Ze MF, Fix typos, Version for the first public release
