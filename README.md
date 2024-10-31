@@ -11,7 +11,7 @@ Python program to perform the fuzzy-based interference line removal algorithm fo
 ## 📝 Important Notes
  - 🚨 Input file must be post-processed by Maahn and Kollias (2012) algorithm (i.e. IMProToo).
  - ☔ This altorithm assumed the rain event. Therefore, the algorithm does not process de-aliased fields, which often gives unreliable value for rain. The users should read '~~_noDA' fields.
- - If interference lines are found in the mid or lower levels rather than the upper levels, we recommend adjusting `min_hgt_idx` to a lower value accordingly.
+ - 🔧 If interference lines are found in the mid or lower levels rather than the upper levels, we recommend adjusting `min_hgt_idx` to a lower value accordingly.
 
 ## 📖 References
 If you found this code helpful, we’d be thrilled to see our publication cited! 🙌 Many thanks!
