@@ -15,4 +15,8 @@ Python program to perform the fuzzy-based interference line removal algorithm fo
 ## 📖 References
 If you found this code helpful, we’d be thrilled to see our publication cited! 🙌 Many thanks!
 
-Kim, K.; Lee, G. A Fuzzy-Logic-Based Approach for Eliminating Interference Lines in Micro Rain Radar (MRR-2). Remote Sens. 2024, 16, 3965. https://doi.org/10.3390/rs16213965
+Kim, K., and G. Lee, 2024: A Fuzzy-Logic-Based Approach for Eliminating Interference Lines in Micro Rain Radar (MRR-2). Remote Sens. 16, 3965, https://doi.org/10.3390/rs16213965.
+
+We also recommended checking out the MK12 algorithm:
+
+Maahn, M., and P. Kollias, 2012: Improved Micro Rain Radar snow measurements using Doppler spectra post-processing, Atmos. Meas. Tech., 5, 2661–2673, https://doi.org/10.5194/amt-5-2661-2012.
